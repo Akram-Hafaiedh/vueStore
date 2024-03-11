@@ -4,10 +4,10 @@ import AboutView from '@/views/AboutView.vue'
 import ProductsPage from '@/views/ProductsPage.vue'
 // import ProductDetail from '@/components/ProductDetail.vue'
 import ProductDetailPage from '@/views/ProductDetailPage.vue'
-import LoginPage from '@/views/LoginPage.vue'
-import RegisterPage from '@/views/RegisterPage.vue'
+import LoginView from '@/views/LoginView.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
 import MainLayout from '@/layouts/MainLayout.vue'
+import RegisterView from '@/views/RegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,31 +20,19 @@ const router = createRouter({
           path: '',
           name: 'home',
           component: HomeView
-        }
-      ]
-    },
-    {
-      path: '/about',
-      component: MainLayout,
-      children: [
+        },
         {
-          path: '',
+          path: 'about',
           name: 'about',
           component: AboutView
-        }
-      ]
-    },
-    {
-      path: '/products',
-      component: MainLayout,
-      children: [
+        },
         {
-          path: '',
+          path: 'products',
           name: 'products',
           component: ProductsPage
         },
         {
-          path: ':id',
+          path: 'products/:id',
           name: 'product',
           component: ProductDetailPage
         },
@@ -57,12 +45,12 @@ const router = createRouter({
         {
           path: 'login',
           name: 'login',
-          component: LoginPage
+          component: LoginView
         },
         {
           path: 'register',
           name: 'register',
-          component: RegisterPage
+          component: RegisterView
         }
       ]
     },

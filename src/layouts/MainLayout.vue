@@ -1,12 +1,10 @@
 <template>
-    <div>
-        <!-- <slot name="header"></slot> -->
-
-        <main :class="[wrapperClass, 'container mx-auto my-4']">
-            <slot></slot>
+    <div class="flex flex-col min-h-screen">
+        <header-component></header-component>
+        <main class="flex-grow">
+            <router-view></router-view>
         </main>
-
-        <footer class="py-4 text-white bg-gray-800">
+        <footer class="py-4 mt-auto text-white bg-gray-800">
             <div class="container mx-auto text-center">
                 &copy; 2024 VueCart. All rights reserved.
             </div>
@@ -15,8 +13,10 @@
 </template>
 
 <script>
+import HeaderComponent from '@/components/HeaderComponent.vue'
 export default {
     name: 'MainLayout',
+    components: { HeaderComponent },
     props: {
         wrapperClass: {
             type: String,

@@ -4,7 +4,8 @@
         <img :src="product.image" alt="Product Image" class="w-24 h-24 mb-2">
         <p class="text-gray-700">{{ product.description }}</p>
         <p class="font-semibold text-gray-900">{{ product.price }}</p>
-        <router-link :to="`/products/${product.id}`" class="text-blue-500">View Details</router-link>
+        <router-link :to="{ name: 'product', params: { id: product.id } }" class="text-blue-500">View
+            Details</router-link>
     </div>
 </template>
 
